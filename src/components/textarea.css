@@ -1,0 +1,20 @@
+.nayak
+{
+    background-color: blue;
+    color:white;
+    border:none;
+    padding:4px;
+    width:80px;
+    border-radius:20px;
+    transition: background-color 0.5s;
+
+}
+.nayak:active
+{
+    background-color: red;
+}
+h{
+    /* display:flex; */
+    /* background-color: red; */
+    justify-content: flex-start;
+}
