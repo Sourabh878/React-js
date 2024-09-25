@@ -6,3 +6,5 @@
 let text="Hello its Me Nayak";
 let array=text.split(" ");
 console.log(array.length);
+
+

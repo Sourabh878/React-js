@@ -26,14 +26,16 @@ export default function TextArea(props) {
         <>
         <div className="container my-3">
             <div className="mb-3">
-                <h1>{props.heading}</h1> {/* Corrected to proper heading tag */}
-                <label htmlFor="text-area" className="form-label">Text Area</label>
+                <h1 className={`text-${props.theme === "light"?'dark':'light'}`} >{props.heading}</h1> {/* Corrected to proper heading tag */}
+               
                 <textarea
-                    className="form-control"
+                    className={`form-control bg-${props.theme === 'light'?'light':'dark'} text-${props.theme === 'light'?'dark':'light'}`}
                     onChange={onChangeListen}
+                    
                     value={text}
                     id="text-area"
                     rows="3"
+                   
                 ></textarea>
             </div>
             <button className="nayak" onClick={buttonClick}>Change</button>
@@ -42,7 +44,7 @@ export default function TextArea(props) {
 
 
         </div>
-        <div className="container">
+        <div className={`container text-${props.theme === "light"?'dark':'light'}`}>
         <h1>Text Summary</h1>
         <p>letter count {text.length}</p>
         <p>Word count {text.split(" ").length - 1}</p>

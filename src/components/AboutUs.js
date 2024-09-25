@@ -1,13 +1,13 @@
 import React,{ useState } from 'react'
 import './About.css'
-
-
 export default function AboutUs() {
     
     const [mode,changeMode] =useState({
         color:"black",
         backgroundColor:"white"
     });
+    
+    }
     const [btnText,TextChange]=useState("light Mode");
     
 
