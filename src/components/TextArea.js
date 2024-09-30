@@ -6,7 +6,7 @@ export default function TextArea(props) {
 
     const buttonClick = () => {
         setText(text.toUpperCase()); // Convert text to uppercase on button click
-        console.log("Change Button Clicked");
+        props.alert("Converted to Upper Case","Success");
     };
 
     const onChangeListen = (event) => {
@@ -16,11 +16,22 @@ export default function TextArea(props) {
     {
         let newtext=text.toLowerCase();
         setText(newtext);
+        props.alert("Converted to Lower Case","Success");
     }
     const buttonClear =()=>
     {
         setText("");
+        props.alert("Cleared Successfully","Success");
     }
+    const rcolor={
+        backgroundColor:"red",
+        color:"white"
+    };
+    
+    const bcolor={
+        backgroundColor:"blue",
+        color:"white"
+    };
     
     return (
         <>
@@ -38,9 +49,9 @@ export default function TextArea(props) {
                    
                 ></textarea>
             </div>
-            <button className="nayak" onClick={buttonClick}>Change</button>
-            <button className="nayak" onClick={tolowercase}>lowercase</button>
-            <button className="nayak" onClick={buttonClear}>clear</button>
+            <button className="nayak" style={props.theme == "light"? bcolor:rcolor} onClick={buttonClick}>Change</button>
+            <button className="nayak" style={props.theme == "light"? bcolor:rcolor} onClick={tolowercase}>lowercase</button>
+            <button className="nayak" style={props.theme == "light"? bcolor:rcolor} onClick={buttonClear}>clear</button>
 
 
         </div>

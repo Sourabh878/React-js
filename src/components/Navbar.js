@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
 
-export default function Navbar(props) {
+export default function Navbar(props) 
+{
+  const style = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width:"400px"
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={`${props.theme}`}>
+    <nav className={`navbar navbar-expand-lg bg-body-tertiary`} data-bs-theme={props.theme}>
       <div className="container-fluid">
         <a className="navbar-brand" href="/">TextUtils</a>
         <button
@@ -46,21 +54,34 @@ export default function Navbar(props) {
               <a className="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          {/* <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form> */}
-          <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" onClick={props.toggle} role="switch" id="flexSwitchCheckDefault" />
-          <label class={`form-check-label text-${props.theme === 'light'?'dark':'light'}`} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-           </div>
+          <div style={style}>
+            <div className="form-check form-switch">
+              <input 
+                className="form-check-input" 
+                type="checkbox" 
+                onClick={props.toggoleG} 
+                role="switch" 
+                id="flexSwitchCheckGreenDark" 
+              />
+              <label className={`form-check-label text-${props.theme === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckGreenDark">
+                Enable GreenDark Mode
+              </label>
+            </div>
+            <div className="form-check form-switch">
+              <input 
+                className="form-check-input" 
+                type="checkbox" 
+                onClick={props.toggle} 
+                role="switch" 
+                id="flexSwitchCheckDarkMode" 
+              />
+              <label className={`form-check-label text-${props.theme === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDarkMode">
+                Enable Dark Mode
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   );
 }
-
-// Correct usage of PropTypes
-// Navbar.propTypes = {
-//   title: PropTypes.String, // or PropTypes.number depending on what you're passing
-// };
